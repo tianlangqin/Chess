@@ -4,7 +4,7 @@ String black = "black";
 public class Board{
   Piece[][] data = new Piece[8][8];
   
-  public void drawboard() {
+  public void drawBoard() {
     for (int i = 0; i < width/SQUARE_SIZE; i++) {
       for (int j = 0; j < height/SQUARE_SIZE; j++) {
         if ((i + j) % 2 == 0) {
@@ -58,7 +58,6 @@ public class Board{
     data[7][5] = new Bishop(white);
     data[7][6] = new Knight(white);
     data[7][7] = new Rook(white); //h1
-    
-    
   }
+  
 } 
