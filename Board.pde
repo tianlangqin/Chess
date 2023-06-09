@@ -59,5 +59,5 @@ public class Board{
     data[7][6] = new Knight(white);
     data[7][7] = new Rook(white); //h1
   }
-  
+  //
 } 

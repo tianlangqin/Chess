@@ -23,5 +23,5 @@ public class Knight extends Piece {
       new PVector(-1,2),
       new PVector(-1,-2),
     };
-  }
+  } //
 }
