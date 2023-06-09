@@ -2,13 +2,13 @@ public class Piece {
   String side; 
   PImage image;
   boolean moved = false; 
-  boolean blocked = false;
+  String name;
 
   public Piece(String side) {
     this.side = side;
   }
   
-  public PVector[] move() {
-    return new PVector[0];//stub
+  public PVector[] move(Board b, int x, int y) {
+    return new PVector[0];
   }
 }

@@ -1,4 +1,4 @@
-String white = "white";
+ String white = "white";
 String black = "black";
 
 public class Board{
