@@ -19,7 +19,7 @@ public class Knight extends Piece {
       new PVector(-2,1),
       new PVector(-2,-1),
       new PVector(1,2),
-      new PVector(1,-1),
+      new PVector(1,-2),
       new PVector(-1,2),
       new PVector(-1,-2),
     };

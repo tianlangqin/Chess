@@ -18,42 +18,58 @@ public class Pawn extends Piece {
       if (!moved) {
         result[1] = new PVector(-2,0);
       }
-      if (b.data[x-1][y -1] != null) {
-        result[2] = new PVector (-1, -1);
-      }
-      if (b.data[x-1][y+1] != null) {
-        result[3] = new PVector (-1, +1);
-      }
+      try {
+        if (b.data[x-1][y -1] != null) {
+          result[2] = new PVector (-1, -1);
+        }
+      } catch(Exception e) {}
+      try {
+        if (b.data[x-1][y+1] != null) {
+          result[3] = new PVector (-1, +1);
+        }
+      } catch(Exception e) {}
       if (b.data[x-1][y] != null) {
         result[0] = null;
       }
-      if (x == 3 && b.data[x][y-1] != null && b.data[x][y -1].numMove ==1) {
-        result[4] = new PVector(-1, -1);
-      }
-      if (x == 3 && b.data[x][y+1] != null && b.data[x][y + 1].numMove ==1) {
-        result[4] = new PVector(-1, +1);
-      }
+      try {
+        if (x == 3 && b.data[x][y-1] != null && b.data[x][y -1].numMove ==1) {
+          result[4] = new PVector(-1, -1);
+        }
+      } catch(Exception e) {}
+      try {
+        if (x == 3 && b.data[x][y+1] != null && b.data[x][y + 1].numMove ==1) {
+          result[4] = new PVector(-1, +1);
+        }
+      } catch(Exception e) {}
     }
     else {
       result[0] = new PVector(1, 0);
       if (!moved) {
         result[1] = new PVector(2,0);
       }
-      if (b.data[x+1][y -1] != null) {
-        result[2] = new PVector (1, -1);
-      }
-      if (b.data[x+1][y+1] != null) {
-        result[3] = new PVector (1, 1);
-      }
+      try {
+        if (b.data[x+1][y -1] != null) {
+          result[2] = new PVector (1, -1);
+        }
+      } catch(Exception e) {}
+      try {
+        if (b.data[x+1][y+1] != null) {
+          result[3] = new PVector (1, 1);
+        }
+      } catch(Exception e) {}
       if (b.data[x+1][y] != null) {
         result[0] = null;
       }
+      try {
       if (x == 4 && b.data[x][y-1] != null && b.data[x][y -1].numMove ==1) {
         result[4] = new PVector(+1, -1);
       }
+      } catch(Exception e) {}
+      try {
       if (x == 4 && b.data[x][y+1] != null && b.data[x][y + 1].numMove ==1) {
         result[4] = new PVector(+1, +1);
       }
+      } catch(Exception e) {}
     }
     return result;
   }
