@@ -12,7 +12,7 @@ public class Pawn extends Piece {
   
   @Override
   public PVector[] move(Board b, int x, int y) {
-    PVector[] result = new PVector[4];
+    PVector[] result = new PVector[5];
     if (this.side.equals("white")) {
       result[0] = new PVector(-1, 0);
       if (!moved) {
@@ -23,6 +23,15 @@ public class Pawn extends Piece {
       }
       if (b.data[x-1][y+1] != null) {
         result[3] = new PVector (-1, +1);
+      }
+      if (b.data[x-1][y] != null) {
+        result[0] = null;
+      }
+      if (x == 3 && b.data[x][y-1] != null && b.data[x][y -1].numMove ==1) {
+        result[4] = new PVector(-1, -1);
+      }
+      if (x == 3 && b.data[x][y+1] != null && b.data[x][y + 1].numMove ==1) {
+        result[4] = new PVector(-1, +1);
       }
     }
     else {
@@ -35,6 +44,15 @@ public class Pawn extends Piece {
       }
       if (b.data[x+1][y+1] != null) {
         result[3] = new PVector (1, 1);
+      }
+      if (b.data[x+1][y] != null) {
+        result[0] = null;
+      }
+      if (x == 4 && b.data[x][y-1] != null && b.data[x][y -1].numMove ==1) {
+        result[4] = new PVector(+1, -1);
+      }
+      if (x == 4 && b.data[x][y+1] != null && b.data[x][y + 1].numMove ==1) {
+        result[4] = new PVector(+1, +1);
       }
     }
     return result;

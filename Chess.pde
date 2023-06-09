@@ -87,9 +87,35 @@ void mouseClicked() {
             }
           }
         } catch (Exception e){}
+        try {
+          if (b.data[(int)currPiece.x][(int)currPiece.y].name.equals("pawn")) {
+            if (b.data[(int)currPiece.x][(int)currPiece.y].side.equals("white") && currX == 0)
+               b.data[(int)currPiece.x][(int)currPiece.y] = new Queen("white");
+          }
+          if (b.data[(int)currPiece.x][(int)currPiece.y].name.equals("pawn")) {
+            if (b.data[(int)currPiece.x][(int)currPiece.y].side.equals("black") && currX == 7)
+               b.data[(int)currPiece.x][(int)currPiece.y] = new Queen("black");
+          }
+        } catch (Exception e) {}
+        try {
+          if (b.data[(int)currPiece.x][(int)currPiece.y].name.equals("pawn")) {
+            if (b.data[(int)currPiece.x][(int)currPiece.y].side.equals("white") 
+            && currY != (int)currPiece.y && b.data[currX][currY] == null) {
+               b.data[currX+1][currY] = null;
+               //System.out.println(1);
+            }             
+          }
+          if (b.data[(int)currPiece.x][(int)currPiece.y].name.equals("pawn")) {
+            if (b.data[(int)currPiece.x][(int)currPiece.y].side.equals("black") 
+            && currY != (int)currPiece.y && b.data[currX][currY] == null) {
+              b.data[currX -1][currY] = null;
+            }                 
+          }
+        } catch (Exception e) {}
         b.data[currX][currY] = b.data[(int)currPiece.x][(int)currPiece.y];
         b.data[(int)currPiece.x][(int)currPiece.y] = null;
         b.data[currX][currY].moved = true;
+        b.data[currX][currY].numMove ++;
         selected = false;
         resetIsLegal();
         

@@ -2,6 +2,7 @@ public class Piece {
   String side; 
   PImage image;
   boolean moved = false; 
+  int numMove = 0;
   String name;
 
   public Piece(String side) {
